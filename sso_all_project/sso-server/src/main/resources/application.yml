@@ -1,0 +1,32 @@
+server:
+  port: 10084
+
+spring:
+  application:
+    name: sso-server
+  redis:
+    #数据库索引
+    database: ${REDIS_DB:0}
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PWD:}
+    #连接超时时间
+    timeout: 5000
+
+sso:
+  client:
+    user:
+      #用户访问接口的ip
+      user-login-url: ${USER_LOGIN_URL:http://127.0.0.1:10083}
+
+      #用户登录的接口名称
+      user-login-api-url: ${USER_LOGIN_API_URL:/api/user/login}
+      #尝试调用接口的最大等待时间(ms)
+      retry-login-time: ${USER_LOGIN_RETRY_TIME:5000}
+      #调用接口的轮询间隔(ms)
+      retry-login-polling-time: ${USER_LOGIN_RETRY_POLLING_TIME:1000}
+      #单个接口的同步等待时间(s)
+      user-login-syn-time: ${USER_LOGIN_SYN_TIME:1}
+
+
+

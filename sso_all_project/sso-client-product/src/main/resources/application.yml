@@ -1,0 +1,6 @@
+server:
+  port: 10082
+
+spring:
+  application:
+    name: sso-client-product

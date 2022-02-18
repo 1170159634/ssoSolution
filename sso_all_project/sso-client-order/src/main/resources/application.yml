@@ -1,0 +1,6 @@
+server:
+  port: 10081
+
+spring:
+  application:
+    name: sso-client-order
